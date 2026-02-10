@@ -38,3 +38,9 @@ In addition to all arguments above, the following attributes are exported:
 * `risk_object` - The entity affected.
 * `risk_object_type` - The entity type (user, system, other).
 * `severity` - The severity level.
+
+## API Reference
+
+* [Retrieve findings](https://help.splunk.com/en/splunk-enterprise-security-8/api-reference/8.3/splunk-enterprise-security-api-reference/findings_1/public_v2_get_findings)
+* [Retrieve finding by ID](https://help.splunk.com/en/splunk-enterprise-security-8/api-reference/8.3/splunk-enterprise-security-api-reference/findings_1/public_v2_get_finding_by_id)
+* [ES API Overview](https://help.splunk.com/en/splunk-enterprise-security-8/rest-api-reference/8.0/overview/the-splunk-enterprise-security-api)

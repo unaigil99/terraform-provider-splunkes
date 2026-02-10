@@ -8,6 +8,8 @@ description: |-
 
 Manages lookup definitions in Splunk. Lookup definitions map to either CSV files or KV store collections, enabling data enrichment in searches.
 
+This resource interacts with the Splunk REST API at `/servicesNS/{owner}/{app}/data/transforms/lookups`.
+
 ## Example Usage
 
 ```hcl
@@ -60,3 +62,19 @@ Import is supported using the following syntax:
 ```shell
 terraform import splunkes_lookup_definition.example "lookup_name"
 ```
+
+## API Reference
+
+This resource uses the **Splunk Enterprise REST API**:
+
+| Operation | Method | Endpoint |
+|-----------|--------|----------|
+| Create | `POST` | `/servicesNS/{owner}/{app}/data/transforms/lookups` |
+| Read | `GET` | `/servicesNS/{owner}/{app}/data/transforms/lookups/{name}` |
+| Update | `POST` | `/servicesNS/{owner}/{app}/data/transforms/lookups/{name}` |
+| Delete | `DELETE` | `/servicesNS/{owner}/{app}/data/transforms/lookups/{name}` |
+
+**Official Splunk Documentation:**
+
+* [Knowledge endpoint descriptions](https://help.splunk.com/en/splunk-enterprise/rest-api-reference/9.4/knowledge-endpoints/knowledge-endpoint-descriptions) - `data/transforms/lookups` endpoint
+* [Managing knowledge objects](https://help.splunk.com/en/splunk-cloud-platform/leverage-rest-apis/rest-api-tutorials/9.2.2406/rest-api-tutorials/managing-knowledge-objects)

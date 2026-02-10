@@ -43,3 +43,8 @@ In addition to all arguments above, the following attributes are exported:
 * `security_domain` - The security domain.
 * `severity` - The severity level.
 * `risk_score` - The default risk score.
+
+## API Reference
+
+* [Search endpoint descriptions](https://help.splunk.com/en/splunk-enterprise/rest-api-reference/9.4/search-endpoints/search-endpoint-descriptions) - `saved/searches` endpoint
+* [List correlation searches in ES](https://help.splunk.com/en/splunk-enterprise-security-7/administer/7.3/correlation-searches/list-correlation-searches-in-splunk-enterprise-security)

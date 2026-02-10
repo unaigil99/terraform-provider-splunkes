@@ -36,3 +36,8 @@ In addition to all arguments above, the following attributes are exported:
 * `status` - The current status (new, in_progress, pending, on_hold, resolved, closed).
 * `assignee` - The assigned analyst username.
 * `priority` - The priority level (informational, low, medium, high, critical).
+
+## API Reference
+
+* [Retrieve investigations](https://help.splunk.com/en/splunk-enterprise-security-8/api-reference/8.3/splunk-enterprise-security-api-reference/investigation_1/public_v2_list_investigations)
+* [ES API Overview](https://help.splunk.com/en/splunk-enterprise-security-8/rest-api-reference/8.0/overview/the-splunk-enterprise-security-api)

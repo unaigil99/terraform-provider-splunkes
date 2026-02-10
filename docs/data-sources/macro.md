@@ -36,3 +36,8 @@ In addition to all arguments above, the following attributes are exported:
 * `args` - Comma-separated argument names.
 * `validation` - A validation expression for the macro arguments.
 * `iseval` - Whether the macro definition is an eval expression.
+
+## API Reference
+
+* [Knowledge endpoint descriptions](https://help.splunk.com/en/splunk-enterprise/rest-api-reference/9.4/knowledge-endpoints/knowledge-endpoint-descriptions)
+* [Configuration endpoint descriptions](https://help.splunk.com/en/splunk-enterprise/leverage-rest-apis/rest-api-reference/10.0/configuration-endpoints/configuration-endpoint-descriptions) - `configs/conf-macros` endpoint

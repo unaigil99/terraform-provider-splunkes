@@ -44,3 +44,8 @@ In addition to all arguments above, the following attributes are exported:
 * `category` - Category classification.
 * `priority` - Priority level.
 * `is_expected` - Whether the asset is expected/known (boolean).
+
+## API Reference
+
+* [Retrieve assets](https://help.splunk.com/en/splunk-enterprise-security-8/api-reference/8.3/splunk-enterprise-security-api-reference/assets_1/public_v2_assets)
+* [ES API Overview](https://help.splunk.com/en/splunk-enterprise-security-8/rest-api-reference/8.0/overview/the-splunk-enterprise-security-api)

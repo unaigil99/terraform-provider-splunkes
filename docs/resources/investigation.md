@@ -55,3 +55,21 @@ terraform import splunkes_investigation.example "investigation_id"
 The import ID is the investigation ID from Splunk ES.
 
 ~> **Note:** On destroy, the investigation is closed (status set to `"closed"`) rather than deleted, as the ES v2 API does not support deletion of investigations.
+
+## API Reference
+
+This resource uses the **Splunk Enterprise Security v2 API**:
+
+| Operation | Method | Endpoint |
+|-----------|--------|----------|
+| Create | `POST` | `/servicesNS/nobody/missioncontrol/public/v2/investigations` |
+| Read | `GET` | `/servicesNS/nobody/missioncontrol/public/v2/investigations?filter=...` |
+| Update | `POST` | `/servicesNS/nobody/missioncontrol/public/v2/investigations/{id}` |
+| Close (Destroy) | `POST` | `/servicesNS/nobody/missioncontrol/public/v2/investigations/{id}` |
+
+**Official Splunk Documentation:**
+
+* [Retrieve investigations](https://help.splunk.com/en/splunk-enterprise-security-8/api-reference/8.3/splunk-enterprise-security-api-reference/investigation_1/public_v2_list_investigations)
+* [Create investigation](https://help.splunk.com/en/splunk-enterprise-security-8/api-reference/8.3/splunk-enterprise-security-api-reference/investigation_1/public_v2_create_investigation)
+* [Update investigation](https://help.splunk.com/en/splunk-enterprise-security-8/api-reference/8.3/splunk-enterprise-security-api-reference/investigation_1/public_v2_update_investigation)
+* [ES API Overview](https://help.splunk.com/en/splunk-enterprise-security-8/rest-api-reference/8.0/overview/the-splunk-enterprise-security-api)

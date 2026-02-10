@@ -113,3 +113,23 @@ terraform import splunkes_correlation_search.example "search_name"
 The import ID is the name of the search.
 
 ~> **Note:** After import, `owner` defaults to `"nobody"` and `app` defaults to `"SplunkEnterpriseSecuritySuite"`.
+
+## API Reference
+
+This resource uses the **Splunk Enterprise REST API** (`saved/searches` endpoint with ES correlation search attributes):
+
+| Operation | Method | Endpoint |
+|-----------|--------|----------|
+| Create | `POST` | `/servicesNS/{owner}/{app}/saved/searches` |
+| Read | `GET` | `/servicesNS/{owner}/{app}/saved/searches/{name}` |
+| Update | `POST` | `/servicesNS/{owner}/{app}/saved/searches/{name}` |
+| Delete | `DELETE` | `/servicesNS/{owner}/{app}/saved/searches/{name}` |
+
+Correlation searches are saved searches with `action.correlationsearch.enabled=1` and additional ES-specific attributes stored in `savedsearches.conf`.
+
+**Official Splunk Documentation:**
+
+* [Search endpoint descriptions](https://help.splunk.com/en/splunk-enterprise/rest-api-reference/9.4/search-endpoints/search-endpoint-descriptions) - `saved/searches` endpoint
+* [Configure correlation searches in ES](https://help.splunk.com/en/splunk-enterprise-security-7/administer/7.2/correlation-searches/configure-correlation-searches-in-splunk-enterprise-security)
+* [List correlation searches in ES](https://help.splunk.com/en/splunk-enterprise-security-7/administer/7.3/correlation-searches/list-correlation-searches-in-splunk-enterprise-security)
+* [Correlation Search creation via REST API](https://splunk.my.site.com/customer/s/article/Correlation-Search-creation-in-Enterprise-Security-through-REST-API)

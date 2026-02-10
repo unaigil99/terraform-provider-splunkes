@@ -8,6 +8,8 @@ description: |-
 
 Manages CSV lookup table files in Splunk. Upload and manage CSV data that can be used by lookup definitions for search enrichment.
 
+This resource interacts with the Splunk REST API at `/servicesNS/{owner}/{app}/data/lookup-table-files`.
+
 ## Example Usage
 
 ```hcl
@@ -47,3 +49,19 @@ Import is supported using the following syntax:
 ```shell
 terraform import splunkes_lookup_table.example "filename.csv"
 ```
+
+## API Reference
+
+This resource uses the **Splunk Enterprise REST API**:
+
+| Operation | Method | Endpoint |
+|-----------|--------|----------|
+| Create | `POST` | `/servicesNS/{owner}/{app}/data/lookup-table-files` |
+| Read | `GET` | `/servicesNS/{owner}/{app}/data/lookup-table-files/{name}` |
+| Update | `POST` | `/servicesNS/{owner}/{app}/data/lookup-table-files/{name}` |
+| Update Content | `POST` | `/services/data/lookup_edit/lookup_contents` |
+| Delete | `DELETE` | `/servicesNS/{owner}/{app}/data/lookup-table-files/{name}` |
+
+**Official Splunk Documentation:**
+
+* [Knowledge endpoint descriptions](https://help.splunk.com/en/splunk-enterprise/rest-api-reference/9.4/knowledge-endpoints/knowledge-endpoint-descriptions) - `data/lookup-table-files` endpoint

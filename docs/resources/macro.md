@@ -8,6 +8,8 @@ description: |-
 
 Manages search macros in Splunk. Macros are reusable SPL snippets that can be referenced in searches using backtick syntax.
 
+This resource interacts with the Splunk REST API at `/servicesNS/{owner}/{app}/configs/conf-macros`.
+
 ## Example Usage
 
 ```hcl
@@ -65,3 +67,20 @@ Reference macros in your SPL searches using backtick syntax:
 `sysmon_events` EventCode=1
 `threshold_alert(10, 50)`
 ```
+
+## API Reference
+
+This resource uses the **Splunk Enterprise REST API** (configuration endpoint for `macros.conf`):
+
+| Operation | Method | Endpoint |
+|-----------|--------|----------|
+| Create | `POST` | `/servicesNS/{owner}/{app}/configs/conf-macros` |
+| Read | `GET` | `/servicesNS/{owner}/{app}/configs/conf-macros/{name}` |
+| Update | `POST` | `/servicesNS/{owner}/{app}/configs/conf-macros/{name}` |
+| Delete | `DELETE` | `/servicesNS/{owner}/{app}/configs/conf-macros/{name}` |
+
+**Official Splunk Documentation:**
+
+* [Knowledge endpoint descriptions](https://help.splunk.com/en/splunk-enterprise/rest-api-reference/9.4/knowledge-endpoints/knowledge-endpoint-descriptions)
+* [Configuration endpoint descriptions](https://help.splunk.com/en/splunk-enterprise/leverage-rest-apis/rest-api-reference/10.0/configuration-endpoints/configuration-endpoint-descriptions) - `configs/conf-{file}` pattern
+* [Use search macros in searches](https://docs.splunk.com/Documentation/Splunk/9.2.0/Knowledge/Usesearchmacros)

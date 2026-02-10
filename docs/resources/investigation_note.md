@@ -8,6 +8,8 @@ description: |-
 
 Manages notes attached to investigations in Splunk Enterprise Security. Notes can be used for runbooks, analysis documentation, and tracking investigation progress within an investigation.
 
+This resource interacts with the ES v2 API at `/servicesNS/nobody/missioncontrol/public/v2/investigations/{id}/notes`.
+
 ## Example Usage
 
 ```hcl
@@ -53,3 +55,22 @@ terraform import splunkes_investigation_note.example "investigation_id/note_id"
 ```
 
 The import ID is a composite of the investigation ID and note ID, separated by `/`.
+
+## API Reference
+
+This resource uses the **Splunk Enterprise Security v2 API**:
+
+| Operation | Method | Endpoint |
+|-----------|--------|----------|
+| Create | `POST` | `/servicesNS/nobody/missioncontrol/public/v2/investigations/{id}/notes` |
+| Read | `GET` | `/servicesNS/nobody/missioncontrol/public/v2/investigations/{id}/notes` |
+| Update | `POST` | `/servicesNS/nobody/missioncontrol/public/v2/investigations/{id}/notes/{noteID}` |
+| Delete | `DELETE` | `/servicesNS/nobody/missioncontrol/public/v2/investigations/{id}/notes/{noteID}` |
+
+**Official Splunk Documentation:**
+
+* [Create note in investigation](https://help.splunk.com/en/splunk-enterprise-security-8/api-reference/8.3/splunk-enterprise-security-api-reference/notes_1/public_v2_create_note_in_investigation)
+* [Get notes from investigation](https://help.splunk.com/en/splunk-enterprise-security-8/api-reference/8.3/splunk-enterprise-security-api-reference/notes_1/public_v2_get_notes_from_investigation)
+* [Update note in investigation](https://help.splunk.com/en/splunk-enterprise-security-8/api-reference/8.3/splunk-enterprise-security-api-reference/notes_1/public_v2_update_note_in_investigation)
+* [Delete note from investigation](https://help.splunk.com/en/splunk-enterprise-security-8/api-reference/8.3/splunk-enterprise-security-api-reference/notes_1/public_v2_delete_note_in_investigation)
+* [ES API Overview](https://help.splunk.com/en/splunk-enterprise-security-8/rest-api-reference/8.0/overview/the-splunk-enterprise-security-api)

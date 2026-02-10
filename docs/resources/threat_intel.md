@@ -8,6 +8,8 @@ description: |-
 
 Manages threat intelligence indicators in Splunk Enterprise Security. Indicators can be added to threat intel collections such as `ip_intel`, `domain_intel`, `email_intel`, `file_intel`, and others, enabling automated correlation against incoming security data.
 
+This resource interacts with the Splunk ES REST API at `/services/data/threat_intel/item/{collection}`.
+
 ## Example Usage
 
 ```hcl
@@ -65,3 +67,19 @@ terraform import splunkes_threat_intel.example "collection/key"
 ```
 
 The import ID is a composite of the collection name and the item `_key`, separated by `/`.
+
+## API Reference
+
+This resource uses the **Splunk Enterprise Security Threat Intelligence REST API**:
+
+| Operation | Method | Endpoint |
+|-----------|--------|----------|
+| Create | `POST` | `/services/data/threat_intel/item/{collection}` |
+| Read | `GET` | `/services/data/threat_intel/item/{collection}/{key}` |
+| Update | `POST` | `/services/data/threat_intel/item/{collection}/{key}` |
+| Delete | `DELETE` | `/services/data/threat_intel/item/{collection}/{key}` |
+
+**Official Splunk Documentation:**
+
+* [Threat Intelligence API reference](https://help.splunk.com/en/splunk-enterprise-security-7/api-reference/7.3/threat-intelligence-endpoints/threat-intelligence-api-reference)
+* [Threat Intelligence API reference (ES 8.0)](https://docs.splunk.com/Documentation/ES/8.0.31/API/ThreatIntelligenceAPI)

@@ -36,3 +36,8 @@ In addition to all arguments above, the following attributes are exported:
 
 * `risk_score` - The computed risk score for the entity (integer).
 * `risk_level` - The risk level classification: `low`, `medium`, `high`, or `critical`.
+
+## API Reference
+
+* [Get risk scores](https://help.splunk.com/en/splunk-enterprise-security-8/api-reference/8.3/splunk-enterprise-security-api-reference/risks_1/public_v2_risk_entity_risk_scores_retrieve)
+* [ES API Overview](https://help.splunk.com/en/splunk-enterprise-security-8/rest-api-reference/8.0/overview/the-splunk-enterprise-security-api)

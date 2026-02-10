@@ -8,6 +8,8 @@ description: |-
 
 Manages security findings in Splunk Enterprise Security. Findings represent manual security observations that analysts create to document threats, suspicious activity, or policy violations.
 
+This resource interacts with the ES v2 API at `/servicesNS/nobody/missioncontrol/public/v2/findings`.
+
 ~> **Note:** Findings cannot be updated or deleted via the ES v2 API. Attempting to update a finding will produce a warning and retain the original values. Destroying the resource removes it from Terraform state only; the finding remains in Splunk ES.
 
 ## Example Usage
@@ -61,3 +63,19 @@ The import ID is the finding ID from Splunk ES.
 
 * **Update:** Not supported by the ES v2 API. Terraform will display a warning and retain the original values. To change a finding, destroy and recreate the resource.
 * **Destroy:** Removes the finding from Terraform state only. The finding remains in Splunk ES and cannot be deleted via the API.
+
+## API Reference
+
+This resource uses the **Splunk Enterprise Security v2 API**:
+
+| Operation | Method | Endpoint |
+|-----------|--------|----------|
+| Create | `POST` | `/servicesNS/nobody/missioncontrol/public/v2/findings` |
+| Read | `GET` | `/servicesNS/nobody/missioncontrol/public/v2/findings/{id}` |
+
+**Official Splunk Documentation:**
+
+* [Create manual finding](https://help.splunk.com/en/splunk-enterprise-security-8/api-reference/8.3/splunk-enterprise-security-api-reference/findings_1/public_v2_create_manual_finding)
+* [Retrieve finding by ID](https://help.splunk.com/en/splunk-enterprise-security-8/api-reference/8.3/splunk-enterprise-security-api-reference/findings_1/public_v2_get_finding_by_id)
+* [Retrieve findings](https://help.splunk.com/en/splunk-enterprise-security-8/api-reference/8.3/splunk-enterprise-security-api-reference/findings_1/public_v2_get_findings)
+* [ES API Overview](https://help.splunk.com/en/splunk-enterprise-security-8/rest-api-reference/8.0/overview/the-splunk-enterprise-security-api)

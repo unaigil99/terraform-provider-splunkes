@@ -8,6 +8,8 @@ description: |-
 
 Manages KV store collections in Splunk. KV store provides a way to store and retrieve key-value data, commonly used for lookup tables and application state.
 
+This resource interacts with the Splunk REST API at `/servicesNS/{owner}/{app}/storage/collections/config`.
+
 ## Example Usage
 
 ```hcl
@@ -52,3 +54,20 @@ Import is supported using the following syntax:
 ```shell
 terraform import splunkes_kvstore_collection.example "collection_name"
 ```
+
+## API Reference
+
+This resource uses the **Splunk Enterprise REST API**:
+
+| Operation | Method | Endpoint |
+|-----------|--------|----------|
+| Create | `POST` | `/servicesNS/{owner}/{app}/storage/collections/config` |
+| Read | `GET` | `/servicesNS/{owner}/{app}/storage/collections/config/{collection}` |
+| Update | `POST` | `/servicesNS/{owner}/{app}/storage/collections/config/{collection}` |
+| Delete | `DELETE` | `/servicesNS/{owner}/{app}/storage/collections/config/{collection}` |
+
+**Official Splunk Documentation:**
+
+* [KV store endpoint descriptions](https://help.splunk.com/en/splunk-enterprise/rest-api-reference/9.2/kv-store-endpoints/kv-store-endpoint-descriptions)
+* [Use the REST API to manage KV Store](https://dev.splunk.com/enterprise/docs/developapps/manageknowledge/kvstore/usetherestapitomanagekv/)
+* [About KV store collections](https://dev.splunk.com/enterprise/docs/developapps/manageknowledge/kvstore/aboutkvstorecollections/)

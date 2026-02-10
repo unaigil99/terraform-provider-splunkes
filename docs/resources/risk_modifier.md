@@ -8,6 +8,8 @@ description: |-
 
 Manages risk score modifiers for entities in Splunk Enterprise Security. Risk modifiers adjust the baseline risk score for specific users or systems, allowing security teams to reflect the relative importance or exposure of assets and identities.
 
+This resource interacts with the ES v2 API at `/servicesNS/nobody/missioncontrol/public/v2/risks/risk_scores`.
+
 ## Example Usage
 
 ```hcl
@@ -54,3 +56,18 @@ The import ID is a composite of the entity name and entity type, separated by `/
 ## Special Behavior
 
 * **Destroy:** Removes the risk modifier from Terraform state only. The risk modifier remains in Splunk ES.
+
+## API Reference
+
+This resource uses the **Splunk Enterprise Security v2 API**:
+
+| Operation | Method | Endpoint |
+|-----------|--------|----------|
+| Create/Update | `POST` | `/servicesNS/nobody/missioncontrol/public/v2/risks/risk_scores/{entity}` |
+| Read | `GET` | `/servicesNS/nobody/missioncontrol/public/v2/risks/risk_scores/{entity}?entity_type=...` |
+
+**Official Splunk Documentation:**
+
+* [Add risk modifiers](https://help.splunk.com/en/splunk-enterprise-security-8/api-reference/8.3/splunk-enterprise-security-api-reference/risks_1/public_v2_risk_entity_risk_scores_update)
+* [Get risk scores](https://help.splunk.com/en/splunk-enterprise-security-8/api-reference/8.3/splunk-enterprise-security-api-reference/risks_1/public_v2_risk_entity_risk_scores_retrieve)
+* [ES API Overview](https://help.splunk.com/en/splunk-enterprise-security-8/rest-api-reference/8.0/overview/the-splunk-enterprise-security-api)

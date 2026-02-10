@@ -8,6 +8,8 @@ description: |-
 
 Manages analytic stories in Splunk Enterprise Security. Analytic stories group related detection searches and provide context for security investigations, helping analysts understand the full scope of a threat scenario.
 
+This resource interacts with the Splunk REST API at `/servicesNS/{owner}/{app}/configs/conf-analyticstories`.
+
 ## Example Usage
 
 ```hcl
@@ -62,3 +64,26 @@ terraform import splunkes_analytic_story.example "story_name"
 The import ID is the name of the analytic story.
 
 ~> **Note:** After import, `owner` defaults to `"nobody"` and `app` defaults to `"SplunkEnterpriseSecuritySuite"`.
+
+## API Reference
+
+This resource uses the **Splunk Enterprise Security REST API** (configuration endpoint for `analyticstories.conf`):
+
+| Operation | Method | Endpoint |
+|-----------|--------|----------|
+| Create | `POST` | `/servicesNS/{owner}/{app}/configs/conf-analyticstories` |
+| Read | `GET` | `/servicesNS/{owner}/{app}/configs/conf-analyticstories/{name}` |
+| Update | `POST` | `/servicesNS/{owner}/{app}/configs/conf-analyticstories/{name}` |
+| Delete | `DELETE` | `/servicesNS/{owner}/{app}/configs/conf-analyticstories/{name}` |
+
+Alternatively, the official Analytic Story API provides a higher-level abstraction:
+
+| Operation | Method | Endpoint |
+|-----------|--------|----------|
+| List/Create | `GET`/`POST` | `/services/analyticstories/configs/analytic_story` |
+| Read/Update | `GET`/`POST`/`PUT` | `/services/analyticstories/configs/analytic_story/{name}` |
+
+**Official Splunk Documentation:**
+
+* [Analytic Story API reference](https://help.splunk.com/en/splunk-enterprise-security-8/rest-api-reference/8.0/analytic-story-endpoints/analytic-story-api-reference)
+* [Manage Analytic Stories through the use case library](https://docs.splunk.com/Documentation/ES/7.2.0/Admin/Usecasecontentlibrary)

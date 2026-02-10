@@ -71,3 +71,19 @@ terraform import splunkes_saved_search.example "search_name"
 The import ID is the name of the search.
 
 ~> **Note:** After import, `owner` defaults to `"nobody"` and `app` defaults to `"search"`.
+
+## API Reference
+
+This resource uses the **Splunk Enterprise REST API**:
+
+| Operation | Method | Endpoint |
+|-----------|--------|----------|
+| Create | `POST` | `/servicesNS/{owner}/{app}/saved/searches` |
+| Read | `GET` | `/servicesNS/{owner}/{app}/saved/searches/{name}` |
+| Update | `POST` | `/servicesNS/{owner}/{app}/saved/searches/{name}` |
+| Delete | `DELETE` | `/servicesNS/{owner}/{app}/saved/searches/{name}` |
+
+**Official Splunk Documentation:**
+
+* [Search endpoint descriptions](https://help.splunk.com/en/splunk-enterprise/rest-api-reference/9.4/search-endpoints/search-endpoint-descriptions) - `saved/searches` endpoint
+* [Creating searches using the REST API](https://docs.splunk.com/Documentation/Splunk/latest/RESTTUT/RESTsearches)
